@@ -28,7 +28,7 @@ router.post('/collections/new-collection', isAuthenticated, async (req, res)=> {
     const newCollection = new Collection({ title, description });
     newCollection.user = req.user.id;
     await newCollection.save();
-    req.flash('success_msg', 'Note Added Successfully');
+    req.flash('success_msg', 'Collection Added Successfully');
     res.redirect('/collections');
 
   }
